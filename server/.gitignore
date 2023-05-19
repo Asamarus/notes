@@ -1,0 +1,10 @@
+node_modules
+build
+coverage
+database
+public/dist
+.vscode
+.DS_STORE
+.env
+tmp
+tests_output

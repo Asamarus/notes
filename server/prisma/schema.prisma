@@ -1,0 +1,95 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:../database/notes.db"
+}
+
+model books {
+  id         Int      @id @default(autoincrement())
+  sync_id    String?
+  created_at DateTime
+  updated_at DateTime
+  section    String?
+  name       String?
+
+  @@index([name], map: "idx_book_name")
+  @@index([section], map: "idx_book_section")
+  @@index([sync_id], map: "idx_books_sync_id")
+}
+
+model notes {
+  id                 Int       @id @default(autoincrement())
+  sync_id            String?
+  created_at         DateTime?
+  updated_at         DateTime?
+  title              String?
+  title_search_index String?
+  section            String?
+  content            String?
+  preview            String?
+  search_index       String?
+  book               String?
+  tags               String?
+  extra              String?
+  sources            String?
+
+  @@index([book], map: "idx_notes_book")
+  @@index([section], map: "idx_notes_section")
+  @@index([sync_id], map: "idx_notes_sync_id")
+}
+
+model notes_tags {
+  id         Int       @id @default(autoincrement())
+  sync_id    String?
+  created_at DateTime?
+  updated_at DateTime?
+  note_id    String?
+  tag_id     String?
+
+  @@unique([note_id, tag_id], map: "unique_notes_tags_note_id_tag_id")
+  @@index([tag_id], map: "idx_notes_tags_tag_id")
+  @@index([note_id], map: "idx_notes_tags_note_id")
+  @@index([sync_id], map: "idx_notes_tags_sync_id")
+}
+
+model sections {
+  id           Int       @id @default(autoincrement())
+  sync_id      String?
+  created_at   DateTime?
+  updated_at   DateTime?
+  name         String?
+  display_name String?
+  color        String?
+  position     Int       @default(0)
+
+  @@index([name], map: "idx_sections_name")
+  @@index([sync_id], map: "idx_sections_sync_id")
+}
+
+model tags {
+  id         Int       @id @default(autoincrement())
+  sync_id    String?
+  created_at DateTime?
+  updated_at DateTime?
+  section    String?
+  name       String?
+
+  @@index([name], map: "idx_tags_name")
+  @@index([section], map: "idx_tags_section")
+  @@index([sync_id], map: "idx_tags_sync_id")
+}
+
+model users {
+  id                Int       @id @default(autoincrement())
+  sync_id           String?
+  created_at        DateTime?
+  updated_at        DateTime?
+  email             String?
+  password          String?
+  remember_me_token String?
+
+  @@index([email], map: "idx_users_name")
+}
