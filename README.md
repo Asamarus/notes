@@ -61,10 +61,12 @@ Note-taking application made with:
 
 11. Run `npm run build` to build the production version of the server.
 12. Run `cp .env.example ./build/.env` to copy the `.env` file.
-13. Run `cd build` to change the current folder to `build`.
-14. Run `npm ci --production` to install production dependencies.
-15. Change `NODE_ENV=development` to `NODE_ENV=production` inside the `.env` file.
-16. Run `node server.js` to run the production version.
+13. Run `mkdir ./build/database` to create the database folder.
+14. Run `cp ./database/notes.db ./build/database/notes.db` to copy the database.
+15. Run `cd build` to change the current folder to `build`.
+16. Run `npm ci --production` to install production dependencies.
+17. Change `NODE_ENV=development` to `NODE_ENV=production` inside the `.env` file.
+18. Run `node server.js` to run the production version.
 
 ## Usage
 
