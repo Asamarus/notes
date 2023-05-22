@@ -9,7 +9,7 @@ import { klona } from 'klona';
 import get from 'lodash/get';
 import findIndex from 'lodash/findIndex';
 import toInteger from 'lodash/toInteger';
-import forEach from 'lodash/foreach';
+import forEach from 'lodash/forEach';
 import find from 'lodash/find';
 import Common from 'App/Logic/Core/Common';
 

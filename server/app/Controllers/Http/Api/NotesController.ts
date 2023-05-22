@@ -8,7 +8,7 @@ import Tags from 'App/Logic/Core/Tags';
 import Common from 'App/Logic/Core/Common';
 import Note from 'App/Models/Note';
 import SearchHelper from 'App/Logic/Core/SearchHelper';
-import forEach from 'lodash/foreach';
+import forEach from 'lodash/forEach';
 import map from 'lodash/map';
 import get from 'lodash/get';
 import toInteger from 'lodash/toInteger';

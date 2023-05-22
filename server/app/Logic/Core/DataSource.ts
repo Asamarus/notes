@@ -1,6 +1,6 @@
 import DB from '@ioc:Adonis/Lucid/Database';
 
-import forEach from 'lodash/foreach';
+import forEach from 'lodash/forEach';
 import startsWith from 'lodash/startsWith';
 import get from 'lodash/get';
 import toInteger from 'lodash/toInteger';
