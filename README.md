@@ -49,7 +49,7 @@ Note-taking application made with:
 5. Open the `server` folder in the terminal.
 6. Run `cp .env.example .env` to create a new `.env` file.
 7. Run `npm install` to install dependencies.
-8. Run `npm update-db-schema` to generate the SQLite database.
+8. Run `npm run update-db-schema` to generate the SQLite database.
 9. Run `node ace add:fts` to add the FTS4 full-text search index to the SQLite database.
 10. Run `node ace add:user` to add a new user to the database.
 
