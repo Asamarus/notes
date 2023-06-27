@@ -93,6 +93,14 @@ const theme: MantineThemeOverride = {
     '.ck-content code': {
       color: theme.colorScheme === 'dark' ? '#efefef' : 'inherit',
     },
+
+    '.table': {
+      margin: '0',
+      position: 'relative',
+      minHeight: '.01%',
+      width: '100%',
+      overflowX: 'auto',
+    },
   }),
 };
 

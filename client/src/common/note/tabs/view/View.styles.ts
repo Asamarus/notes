@@ -15,5 +15,26 @@ export default createStyles((theme, { type }: ViewStylesParams) => ({
     '& code': {
       backgroundColor: 'hsla(0,0%,78%,.3)',
     },
+
+    '& table': {
+      border: '1px double #b3b3b3',
+      borderCollapse: 'collapse',
+      borderSpacing: '0',
+      width: '100%',
+      maxWidth: '100%',
+      '& th': {
+        border: '1px solid #bfbfbf',
+        minWidth: '2em',
+        padding: '.4em',
+        background: 'rgba(0,0,0,.05)',
+        fontWeight: 700,
+        textAlign: 'left',
+      },
+      '& td': {
+        border: '1px solid #bfbfbf',
+        minWidth: '2em',
+        padding: '.4em',
+      },
+    },
   },
 }));
