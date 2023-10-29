@@ -59,11 +59,11 @@ const config = {
   codeBlock: {
     languages: [
       { language: 'plain-text', label: 'Plain text' },
+      { language: 'csharp', label: 'C#' },
       { language: 'tsx', label: '.tsx' },
       { language: 'jsx', label: '.jsx' },
       { language: 'typescript', label: 'TypeScript' },
       { language: 'javascript', label: 'JavaScript' },
-      { language: 'php', label: 'PHP' },
       { language: 'css', label: 'CSS' },
       { language: 'html', label: 'HTML' },
       { language: 'python', label: 'Python' },
@@ -71,12 +71,12 @@ const config = {
       { language: 'json', label: 'JSON' },
       { language: 'less', label: 'LESS' },
       { language: 'sass', label: 'Sass' },
-      { language: 'csharp', label: 'C#' },
       { language: 'java', label: 'Java' },
       { language: 'regex', label: 'Regex' },
       { language: 'bash', label: 'Bash' },
       { language: 'diff', label: 'Diff' },
       { language: 'git', label: 'git' },
+      { language: 'php', label: 'PHP' },
     ],
   },
 };

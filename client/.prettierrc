@@ -7,5 +7,6 @@
     "jsxBracketSameLine": true,
     "parser": "typescript",
     "noSemi": true,
-    "rcVerbose": true
+    "rcVerbose": true,
+    "singleAttributePerLine": true
 }
