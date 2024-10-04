@@ -49,6 +49,7 @@ export default class SchemaHelper {
     await db.rawQuery(`DROP TRIGGER IF EXISTS ${ftsTableName}_after_insert;`);
     await db.rawQuery(
       `CREATE TRIGGER ${ftsTableName}_after_insert AFTER INSERT on ${tableName}
+        FOR EACH ROW
         BEGIN
         INSERT INTO ${ftsTableName} (${insertFTSColumns}) VALUES (${insertTableColumns});
         END;
@@ -57,7 +58,7 @@ export default class SchemaHelper {
 
     let updateWhen: any = map(
       filter(tableColumns, (c) => c !== tableIdKey),
-      (c) => `OLD.${c}<>NEW.${c}`
+      (c) => `OLD.${c} IS DISTINCT FROM NEW.${c}`
     );
     updateWhen = updateWhen.join(' OR ');
 
@@ -73,6 +74,7 @@ export default class SchemaHelper {
     await db.rawQuery(
       `CREATE TRIGGER ${ftsTableName}_after_update AFTER UPDATE on ${tableName}
         WHEN ${updateWhen}
+        FOR EACH ROW
         BEGIN
         UPDATE ${ftsTableName} SET ${updateColumns} where ${ftsIdkey} = NEW.${tableIdKey};
         END;
@@ -83,6 +85,7 @@ export default class SchemaHelper {
     await db.rawQuery(`DROP TRIGGER IF EXISTS ${ftsTableName}_after_delete;`);
     await db.rawQuery(
       `CREATE TRIGGER IF NOT EXISTS ${ftsTableName}_after_delete AFTER DELETE on ${tableName}
+        FOR EACH ROW
         BEGIN
         DELETE FROM ${ftsTableName} WHERE ${ftsIdkey}=OLD.${tableIdKey};
         END;
